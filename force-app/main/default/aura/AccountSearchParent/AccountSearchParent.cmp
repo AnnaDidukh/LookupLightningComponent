@@ -1,7 +1,6 @@
 <aura:component implements="flexipage:availableForRecordHome,force:hasRecordId,force:lightningQuickAction" controller="AccountSearchRelatedController" >
     <aura:attribute name="objectList" type="List" default="[{label:'Case', APIName:'case', fieldName: 'type', iconName: 'standard:case'}]" />
     <aura:attribute name="value" type="String" default="" description="To pre-populate a value" />
- 
     <c:AccoutSearchRelated objectList="{!v.objectList}" value="{!v.value}" label="Object Lookup/Field Name" />
     <c:AccoutSearchRelated value="{!v.value}" />
     <c:AccoutSearchRelated value="{!v.value}" />
