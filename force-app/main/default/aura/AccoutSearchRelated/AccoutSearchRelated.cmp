@@ -1,12 +1,10 @@
 <aura:component implements="flexipage:availableForRecordHome,force:hasRecordId" controller="AccountSearchRelatedController" >
-	
-	<!-- Attributes that can be set while component calling-->
+    <!-- Attributes that can be set while component calling-->
     <aura:attribute name="objectList" 		type="List" 	default="" description="Objects whose records to show" />
-    <aura:attribute name="value" 			type="String" 	default="" description="To pre-populate a value" />
+    <aura:attribute name="value" 		type="String" 	default="" description="To pre-populate a value" />
     <aura:attribute name="recordCount" 		type="string" 	default="5" description="Records visible at once"/>
-    <aura:attribute name="label" 			type="string" 	default="" description="Label will be displayed above input Box" />
-    <aura:attribute name="placeholder" 		type="string" 	default="Search.." description="placeholder for input Box" />
-    
+    <aura:attribute name="label" 		type="string" 	default="" description="Label will be displayed above input Box" />
+    <aura:attribute name="placeholder" 		type="string" 	default="Search.." description="placeholder for input Box" /> 
     <!-- Internal Use Attributes -->
     <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
     <aura:attribute name="searchString" 	type="string"  default="" access="private" description="String to search"/>
@@ -14,8 +12,7 @@
     <aura:attribute name="selectedRecord" 	type="Object"  default="" access="private" description="selected Record Id" />
     <aura:attribute name="recordsList" 		type="List"    access="private" description="List of Records having data" />
     <aura:attribute name="showObjectList" 	type="boolean" default="false" access="private" />
-    <aura:attribute name="message" 			type="String"  default="" access="private" />
-
+    <aura:attribute name="message" 		type="String"  default="" access="private" />
     <!-- Component Markup -->
     <div class="slds-form-element">
         <aura:if isTrue="{!!empty(v.label)}">
@@ -89,7 +86,7 @@
 						                </div>
 					              	</li>
 				              	</aura:set>
-							</aura:if>
+					        </aura:if>
 				        </ul>
 			        </div>
 			    </div>
