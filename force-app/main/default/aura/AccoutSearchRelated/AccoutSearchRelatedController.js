@@ -3,7 +3,6 @@
 	doInit : function( component, event, helper ) {
     	$A.util.toggleClass(component.find('resultsDiv'), 'slds-is-open');
         $A.util.removeClass(component.find('objectDataDiv'), 'slds-is-open');
-
 		var objectList = component.get('v.objectList');
 		objectList.push( {label:'Account', APIName:'account', fieldName: 'name', iconName: 'standard:account'} );
 		objectList.push( {label:'Contact', APIName:'contact', fieldName: 'name', iconName: 'standard:contact'} );
@@ -12,12 +11,10 @@
 		component.set('v.objectList', objectList);
         component.set('v.selectedObject', component.get('v.objectList')[0]);
 	},
-
 	showObjects : function( component, event, helper ) {
         component.set('v.showObjectList', true);
 		$A.util.toggleClass(component.find('objectDataDiv'), 'slds-is-open');
 	},
-
     selectObject : function( component, event, helper ) {
         component.set('v.showObjectList', false);
         if(!$A.util.isEmpty(event.currentTarget.id)) {
@@ -29,7 +26,6 @@
             component.set('v.searchString', '');
         }
     },
-
     // When a keyword is entered in search box
 	searchRecords : function( component, event, helper ) {
         $A.util.removeClass(component.find('objectDataDiv'), 'slds-is-open');
@@ -39,7 +35,6 @@
             $A.util.removeClass(component.find('resultsDiv'), 'slds-is-open');
         }
 	},
-
     // When an item is selected
 	selectItem : function( component, event, helper ) {
         if(!$A.util.isEmpty(event.currentTarget.id)) {
@@ -52,7 +47,6 @@
             $A.util.removeClass(component.find('resultsDiv'), 'slds-is-open');
         }
 	},
-
     // To remove the selected item.
 	removeItem : function( component, event, helper ){
         component.set('v.selectedRecord','');
@@ -62,12 +56,10 @@
             component.find( 'inputLookup' ).focus();
         }, 250);
     },
-
     // To close the dropdown if clicked outside the dropdown.
     blurRecordList : function( component, event, helper ){
     	$A.util.removeClass(component.find('resultsDiv'), 'slds-is-open');
     },
-
     blurObjectList : function( component, event, helper ){
         $A.util.removeClass(component.find('objectDataDiv'), 'slds-is-open');
         component.set('v.showObjectList', false);
